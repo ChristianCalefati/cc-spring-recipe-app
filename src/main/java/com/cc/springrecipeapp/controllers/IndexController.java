@@ -8,6 +8,7 @@ public class IndexController {
 
     @RequestMapping({"", "/", "/index"})
     public String getIndex(){
+        System.out.println("Starting Service 1236.......");
         return "index";
     }
 
