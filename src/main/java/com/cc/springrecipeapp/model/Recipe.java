@@ -113,8 +113,17 @@ public class Recipe {
         return notes;
     }
 
+    //Sets the recipe value on Notes side (bidirectional)
     public void setNotes(Notes notes) {
         this.notes = notes;
+        notes.setRecipe(this);
+    }
+
+    //helper to add the ingredient (bidirectional)
+    public Recipe addIngredient(Ingredient ingredient){
+        ingredient.setRecipe(this);
+        this.ingredients.add(ingredient);
+        return this;
     }
 
     public Set<Ingredient> getIngredients() {
